@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Prosto+One&family=Raleway:wght@400;500;600;700&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.formModal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #000000cc;
+  display: grid;
+  place-items: center;
+
+  
+
+
+  .formModal-container {
+    width: 622px;
+    height: 572px;
+    background: white;
+    padding: 30px;
+
+    .orderCallForm {
+      
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      
+
+      .titleForm {
+        font-family: Prosto One;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 24px;
+      }
+
+      .closeFormBox {
+        width: 100%;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+
+        .closeFormBtn {
+          background: none;
+          border: none;
+          outline: none;
+          cursor: pointer;
+        }
+      }
+
+      .inpBox1,
+      .inpBox2 {
+        width: 310px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .inpBox1 {
+        margin-top: 25px;
+        color: rgba(138, 138, 138, 1);
+        font-family: Prosto One;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 16px;
+      }
+
+      .inpBox2 {
+        margin-top: 25px;
+        color: rgba(138, 138, 138, 1);
+        font-family: Prosto One;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 16px;
+      }
+
+      
+      .lbl {
+        display: flex;
+        justify-content: start;
+      }
+
+      #userNameInp{
+        padding-bottom: 5px;
+        margin-top: 15px;
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid rgba(222, 219, 219, 1);
+        color: rgba(138, 138, 138, 1);
+        outline: none;
+      }
+
+      #telephoneInp {
+        padding-bottom: 5px;
+        margin-top: 15px;
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid rgba(222, 219, 219, 1);
+        color: rgba(138, 138, 138, 1);
+        outline: none;
+      }
+
+      #commentInp {
+        padding: 15px;
+        padding-bottom: 5px;
+        margin-top: 15px;
+        width: 100%;
+        height: 128px;
+        border: 1px solid rgba(222, 219, 219, 1);
+        color: rgba(138, 138, 138, 1);
+        outline: none;
+      }
+
+      .inpBox3 {
+        width: 310px;
+        margin: 0 auto;
+        margin-top: 45px;
+        color: rgba(138, 138, 138, 1);
+        font-family: Prosto One;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 16px;
+      }
+
+ 
+
+
+
+      .submitInp {
+        margin-top: 15px;
+        width: 310px;
+        height: 50px;
+        text-align: center;
+        background: #000;
+
+        font-family: Raleway;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 20px;
+        color: white;
+        border: none;
+        outline: none;
+        cursor: pointer;
+      }
+
+      .submitInp:hover {
+        background: #f05a00;
+      }
+
+      .textContent {
+        margin-top: 10px;
+        width: 310px;
+        text-align: center;
+
+        font-family: Raleway;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 16px;
+
+      }
+    }
+  }
+}

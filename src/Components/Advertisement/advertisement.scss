@@ -1,0 +1,152 @@
+.advertisement {
+    margin-top: 95px;
+    background: #3b3b3b;
+    height: 528px;
+    width: 100%;
+    display: grid;
+    place-items: center;
+
+    .advertisement-container {
+        width: 75%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+
+        .moreInfoButton_content {
+            width: 58px;
+            height: 58px;
+            background: #000;
+            display: grid;
+            place-items: center;
+            border: none;
+            outline: none;
+        }
+
+        .moreInfoButton_content:hover {
+            background: #f05a00;
+        }
+
+        .content1 {
+            margin-right: 23px;
+            width: 640px;
+            height: 488px;
+            background-image: url(../../img/banner1.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .titleContent1 {
+                font-family: Prosto One;
+                font-size: 40px;
+                font-weight: 400;
+                line-height: 48px;
+                color: white;
+                padding: 20px 20px 0px 20px;
+            }
+
+            .toCatalogButton {
+                border: none;
+                border-radius: 7px;
+                margin-left: 20px;
+                width: 210px;
+                height: 50px;
+                background-color: #f05a00;
+                text-align: center;
+                font-family: Raleway;
+                font-size: 14px;
+                font-weight: 600;
+                line-height: 16px;
+                color: white;
+                text-transform: uppercase;
+            }
+
+            .toCatalogButton:hover {
+                cursor: pointer;
+            }
+
+        }
+
+        .content2 {
+            margin-right: 12px;
+            margin-left: 11px;
+            width: 310px;
+            height: 488px;
+            background-image: url(../../img/banner2.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .titleContent2{
+                padding: 20px 20px 0px 20px;
+                font-family: Prosto One;
+                font-size: 40px;
+                font-weight: 400;
+                line-height: 48px;
+                color: white;
+            }
+        }
+
+        .content3 {
+            margin-left: 20px;
+            width: 400px;
+            height: 488px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            
+            .titleContent3{
+                padding: 20px 20px 0px 20px;
+                font-family: Prosto One;
+                font-size: 20px;
+                font-weight: 400;
+                line-height: 24px;
+                color: white;
+            }
+
+            .topContent3 {
+                height: 234px;
+                background-image: url(../../img/banner3.png);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                //styleName: Subtitle;
+                font-family: Prosto One;
+                font-size: 20px;
+                font-weight: 400;
+                line-height: 24px;
+                color: white;
+            }
+
+            .lowContent3 {
+                height: 234px;
+                background-image: url(../../img/banner4.png);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                //styleName: Subtitle;
+                font-family: Prosto One;
+                font-size: 20px;
+                font-weight: 400;
+                line-height: 24px;
+                color: white;
+            }
+        }
+    }
+}
