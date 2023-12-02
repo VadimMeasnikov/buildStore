@@ -16,7 +16,8 @@ import closeImg from '../../img/close.png'
 
 import './navigation.scss'
 
-export default function () {
+export default function Navigation ({countCart, setCountCart}) {
+  
     const [isOpenForm, setIsOpenForm] = useState(false)
     const [nameInp, setNameInp] = useState("")
     const [telephoneInp, setTelephoneInp] = useState("")
@@ -68,9 +69,9 @@ export default function () {
             }
             <div className="navigation-content1">
                 <div className="navigation-content1-container">
-                    <div className="logo">
+                    <NavLink to='/' className="logo">
                         <img src={logo} alt="logo" />
-                    </div>
+                    </NavLink>
                     <div className="timetable">
                         <p className='time'>Время работы:
                             10:00–20:00</p>
@@ -81,21 +82,21 @@ export default function () {
                     </div>
 
                     <div className="functBox">
-                        <div className="saves functCard">
+                        <NavLink to='/saves' id='saves' className="functCard">
                             <img src={saves} alt="" />
-                        </div>
-                        <div className="status functCard">
+                        </NavLink>
+                        <NavLink to='/status' id='status' className="functCard">
                             <img src={cart} alt="" />
-                        </div>
-                        <div className="profile functCard">
+                        </NavLink>
+                        <NavLink to='/profile' id='profile' className="functCard">
                             <img src={profileImg} alt="" />
-                        </div>
-                        <div className="profile functCard">
+                        </NavLink>
+                        <NavLink to='/cart' id='cart' className="functCard">
                             <div className="countBox">
-                                <p>0</p>
+                                <p>{countCart}</p>
                             </div>
                             <img className='cartImage' src={cart} alt="" />
-                        </div>
+                        </NavLink>
                     </div>
 
                     <div className="productsPrice">

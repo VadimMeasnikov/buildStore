@@ -52,15 +52,37 @@
         .contentNews {
             width: 60%;
 
-            .contentNews-container{
+            .contentNews-container {
                 display: flex;
                 flex-wrap: wrap;
                 gap: 25px;
-                .cardNews{
+
+                .cardNews {
                     width: 420px;
                     height: 250px;
                 }
             }
         }
+    }
+}
+
+.cardNewsLink {
+    text-decoration: none;
+
+    .titleOfNews {
+        font-family: Prosto One;
+        font-weight: 400;
+        line-height: 32px;
+        color: black;
+
+    }
+
+    .dateOfNews {
+        font-family: Raleway;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20px;
+        color: black;
+
     }
 }

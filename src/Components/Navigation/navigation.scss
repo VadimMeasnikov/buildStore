@@ -1,6 +1,6 @@
 .navBar {
     width: 100%;
-    height: 110px;
+    height: 206px;
 
     .navigation-content1 {
         display: flex;
@@ -28,6 +28,9 @@
                     display: grid;
                     place-items: center;
                     margin-right: 1px;
+                }
+                .active{
+                    background-color: #f05a00;
                 }
 
                 .functCard:hover {

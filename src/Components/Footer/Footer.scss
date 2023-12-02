@@ -1,0 +1,85 @@
+.socialImg {
+    width: 32px;
+    height: 32px;
+}
+
+.footer {
+
+    height: 332px;
+    display: grid;
+    place-items: center;
+    background: #3b3b3b;
+
+    .footer-container {
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .footer-box1 {
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+
+            .footerLink_box1 {
+                margin-bottom: 15px;
+                text-decoration: none;
+                font-family: Raleway;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 20px;
+                color: rgba(255, 255, 255, 1);
+            }
+        }
+
+        .footer-box2 {
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+
+            .footerLink_box2 {
+                margin-bottom: 15px;
+                text-decoration: none;
+                font-family: Raleway;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 20px;
+                color: rgba(255, 255, 255, 1);
+            }
+        }
+
+        .footer-box3 {
+            .infoFooterText {
+                font-family: Raleway;
+                font-size: 18px;
+                font-weight: 500;
+                line-height: 20px;
+                color: white;
+                margin-bottom: 15px;
+
+            }
+
+            .social {
+                margin-bottom: 15px;
+
+                .socialLink {
+                    margin-left: 15px;
+                }
+            }
+
+            .contentFooter {
+                width: 200px;
+
+                .userDocLink {
+                    font-family: Raleway;
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 16px;
+                    color: rgba(255, 255, 255, 1);
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
