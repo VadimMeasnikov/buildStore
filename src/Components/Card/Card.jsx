@@ -10,50 +10,22 @@ import cartAfter from '../../img/cartAfter.png'
 import weHave from '../../img/weHave.png'
 
 export default function Card(props) {
+    const[products, setProducts] = useState()
+
     const [isHeart, setIsheart] = useState(false)
     const [isCart, setIsCart] = useState(false)
     const [isStatus, setIsStatus] = useState(false)
     const [isStock, setIsStock] = useState(false)
 
-    const [countCart, setCountCart] = useState(0)
-    const cartArr = []
-    const [countCartArr, setCountCartArr] = useState([])
 
 
     function handleHeart() {
-        if (isHeart === false) {
-            setIsheart((prevIsHeart) => !prevIsHeart)
-            let index = 1
-            setCountCartArr([...countCartArr])
-            setCountCart((prev) => prev + 1)
-        } else if (isHeart === true) {
-            setIsheart((prevIsHeart) => !prevIsHeart)
-            setCountCart((prev) => prev - 1)
-            let index = 1
-            setCountCartArr([...countCartArr, index])
-        }
-
-        console.log('i am arr length ' + countCartArr.length)
-
+        setIsheart((prevIsHeart) => !prevIsHeart)
     }
 
     function handleCart() {
         setIsCart((prevIsCart) => !prevIsCart)
-        setCountCart((prevCountCart) => prevCountCart + 1)
-        console.log(setCountCart)
     }
-
-    // function checkStatus(arr) {
-    //     if (arr.stock === true) {
-    //         console.log(true)
-    //         return (
-    //             <div div className="stockBox" >
-    //                 <img src={weHave} alt="" />
-    //                 <p className='stockText'>в наличии</p>
-    //             </div >
-    //         )
-    //     }
-    // }
 
     return (
 
@@ -65,11 +37,6 @@ export default function Card(props) {
                     </div>
                     <div className="cardSaves">
                         {!isHeart ? <img onClick={handleHeart} src={whiteHeart} alt="" /> : <img onClick={handleHeart} src={redHeart}></img>}
-                        {/* {!isHeart ?
-                            <img onClick={() => { handleHeart; setCountCart((prev) => prev - 1) }} src={whiteHeart} alt="" />
-                            :
-                            <img onClick={() => { handleHeart; setCountCart((prev) => prev + 1) }} src={redHeart}></img>
-                        } */}
                     </div>
 
                 </div>
@@ -97,7 +64,6 @@ export default function Card(props) {
                     </div>
                 </div>
             </div>
-            {countCart}
         </div>
     )
 }

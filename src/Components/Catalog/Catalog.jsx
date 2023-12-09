@@ -40,13 +40,37 @@ import tool2 from '../../img/tool2.png'
 import tool3 from '../../img/tool3.png'
 
 
-export default function Catalog({countCart, setCountCart}) {
+export default function Catalog({ countCart, setCountCart }) {
   const [countPaint, setCountPaint] = useState(0)
   const [countClothes, setCountClothes] = useState(0)
   const [countSeason, setCountSeason] = useState(0)
   const [countElectro, setCountElectro] = useState(0)
   const [countForHouse, setCountForHouse] = useState(0)
   const [countTool, setCountTool] = useState(0)
+  const [productData, setProductData] = useState([])
+
+  const paintJson = Paint
+  const clothesJson = Clothes
+  const electroJson = Electro
+  const forHouseJson = forHouse
+  const seasonToolsJson = seasonTools
+  const toolsJson = Tool
+
+  const mergedProductData = [
+    ...paintJson,
+    ...clothesJson,
+    ...electroJson,
+    ...forHouseJson,
+    ...seasonToolsJson,
+    ...toolsJson
+  ]
+
+  console.log(mergedProductData)
+
+  useState(() => {
+    setProductData(mergedProductData);
+  }, []);
+
 
   const paintImgs = [paintImg1, paintImg2, paintImg3, paintImg2]
   const clothesImgs = [clothesImg2, clothesImg2, clothesImg1, clothesImg3]
@@ -119,7 +143,7 @@ export default function Catalog({countCart, setCountCart}) {
     setCountElectro((prevCountElectro) => prevCountElectro - 1)
   }
 
-  
+
   function nextCardForHouse() {
     if (countForHouse === forHouse.length - 1) {
       setCountForHouse(0);
@@ -165,7 +189,14 @@ export default function Catalog({countCart, setCountCart}) {
               </div>
             </div>
             <div className="contentBox">
-              <Card img={paintImgs[countPaint]} arr={Paint[countPaint]} title={Paint[countPaint].название} color={Paint[countPaint].цвет} type={Paint[countPaint].тип} price={Paint[countPaint].цена} model={Paint[countPaint].модель} stock={Paint[countPaint].наличие} />
+            <Card img={paintImgs[countPaint]} title={Paint[countPaint].название} size={Paint[countPaint].размер} type={Paint[countPaint].тип} price={Paint[countPaint].цена} />
+              {/* {productData.map((product) => (
+                <div key={product.id}>
+                  <h3>{product.name}</h3>
+                  <p>Price: {product.price}</p>
+                  Paint
+                </div>
+              ))} */}
             </div>
           </div>
 
