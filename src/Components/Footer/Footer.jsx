@@ -1,5 +1,5 @@
 import './Footer.scss'
-import { Link } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 
 import logo from '../../img/logo.png'
 import inst from '../../img/inst.png'
@@ -20,7 +20,7 @@ export default function Footer() {
         </div>
         <div className="footer-box2">
           <Link className='footerLink_box2'>О компании</Link>
-          <Link className='footerLink_box2'>Контакты</Link>
+          <Link to='/contacts' className='footerLink_box2'>Контакты</Link>
           <Link className='footerLink_box2'>Новинки</Link>
           <Link className='footerLink_box2'>Хиты сезона</Link>
           <Link className='footerLink_box2'>Распродажи</Link>

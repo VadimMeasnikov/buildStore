@@ -1,0 +1,35 @@
+[
+    {
+      "name": "Иван",
+      "surname": "Иванов",
+      "phone": "+7 (123) 456-7890",
+      "email": "ivanov@example.com",
+      "password": "пароль123",
+      "city": "Москва",
+      "street": "Примерная улица",
+      "house": "12",
+      "apartment": "34"
+    },
+    {
+      "name": "Екатерина",
+      "surname": "Смирнова",
+      "phone": "+7 (987) 654-3210",
+      "email": "smirnova@example.com",
+      "password": "qwerty456",
+      "city": "Санкт-Петербург",
+      "street": "Улица Примерная",
+      "house": "56",
+      "apartment": "78"
+    },
+    {
+      "name": "Алексей",
+      "surname": "Петров",
+      "phone": "+7 (555) 555-5555",
+      "email": "petrov@example.com",
+      "password": "abc123",
+      "city": "Екатеринбург",
+      "street": "Улица Первая",
+      "house": "90",
+      "apartment": "12"
+    }
+]

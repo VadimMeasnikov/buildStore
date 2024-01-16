@@ -4,15 +4,13 @@ import Advertisement from '../../Components/Advertisement/Advertisement'
 import Catalog from '../../Components/Catalog/Catalog'
 import AboutUs from '../../Components/AboutUs/AboutUs.jsx'
 import News from '../../Components/News/News.jsx'
-import ourBrands from '../../Components/ourBrands/ourBrands.jsx'
 
 
-export default function Home() {
+export default function Home({ arrCardsState, arrBasket }) {
   return (
     <div className='home'>
       <Advertisement />
-      <Catalog  />
-      <ourBrands />
+      <Catalog arrCardsState={arrCardsState} arrBasket={arrBasket}  />
       <AboutUs />
       <News />
     </div>
