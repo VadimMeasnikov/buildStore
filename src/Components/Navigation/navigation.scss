@@ -29,7 +29,8 @@
                     place-items: center;
                     margin-right: 1px;
                 }
-                .active{
+
+                .active {
                     background-color: #f05a00;
                 }
 
@@ -37,7 +38,7 @@
                     background-color: #f05a00;
                 }
 
-                .cartImage {
+                .navBar_Image {
                     position: absolute;
                 }
 
@@ -52,6 +53,16 @@
                     z-index: 2;
                     bottom: 9px;
                     left: 12px;
+
+                    .activeCartText {
+                        background-color: #3b3b3b;
+                        border-radius: 50%;
+                    }
+
+                    .noActiveCartText {
+                        background-color: #f05a00;
+                        border-radius: 50%;
+                    }
                 }
             }
 
@@ -78,7 +89,8 @@
 
                 text-decoration: none;
                 color: #fc573b;
-                background:  #3b3b3b;;
+                background: #3b3b3b;
+                ;
                 border: none;
                 cursor: pointer;
             }
@@ -141,7 +153,8 @@
                     text-decoration: none;
                     color: white;
                 }
-                .navMainLink:hover{
+
+                .navMainLink:hover {
                     color: orange;
                     text-decoration: underline;
                 }
@@ -175,6 +188,33 @@
     }
 }
 
-@media (max-width:1280px){
-    
+.link-box {
+    width: 200px;
+    height: 50px;
+ 
+    border: 1px solid rgba(240, 90, 0, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .toCatalog_link {
+        padding: 15px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        font-family: Raleway;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 20px;
+        color: white;
+        text-decoration: none;
+
+    }
 }
+.link-box:hover{
+    background-color: rgba(240, 90, 0, 1);
+}
+
+@media (max-width:1280px) {}

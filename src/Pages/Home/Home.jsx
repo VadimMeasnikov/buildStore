@@ -6,11 +6,11 @@ import AboutUs from '../../Components/AboutUs/AboutUs.jsx'
 import News from '../../Components/News/News.jsx'
 
 
-export default function Home({ arrCardsState, arrBasket }) {
+export default function Home({ products, arrBasket, arrSaves, arrCardFunctions, cardImgsFunctions}) {
   return (
     <div className='home'>
       <Advertisement />
-      <Catalog arrCardsState={arrCardsState} arrBasket={arrBasket}  />
+      <Catalog cardImgsFunctions={cardImgsFunctions} products={products} arrBasket={arrBasket} arrSaves={arrSaves} arrCardFunctions={arrCardFunctions}/>
       <AboutUs />
       <News />
     </div>

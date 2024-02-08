@@ -16,6 +16,14 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+
+            .cardSaves {
+                .addToSaves_btn {
+                    background: none;
+                    border: none;
+                    outline: none;
+                }
+            }
         }
 
         .cardContent {
@@ -25,6 +33,7 @@
                 font-weight: 500;
                 line-height: 20px;
             }
+
             .cardImage {
                 display: grid;
                 place-items: center;
@@ -71,4 +80,37 @@
             padding-top: 25px;
         }
     }
+
+    .basket_btn {
+        background: none;
+        border: none;
+        outline: none;
+    }
+}
+
+.new_box {
+    background: #180A3E;
+
+    width: 70px;
+    height: 24px;
+    padding: 5px;
+
+    font-family: Raleway;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    color: white;
+}
+
+.weHave_box {
+    display: flex;
+    justify-content: space-between;
+    width: 90px;
+
+    font-family: Raleway;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    color: rgba(18, 105, 53, 1);
+
 }

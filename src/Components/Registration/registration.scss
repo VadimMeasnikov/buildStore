@@ -1,0 +1,146 @@
+.formModal_reg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #000000d8;
+    display: grid;
+    place-items: center;
+  
+    .formModal_reg-container {
+      width: 622px;
+      height: 700px;
+      background: hsl(0, 0%, 100%);
+    }
+  
+    .closeFormBox {
+      padding-top: 20px;
+      padding-right: 20px;
+      display: flex;
+      justify-content: end;
+    }
+  
+    .regForm {
+      width: 70%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+  
+      .titleForm {
+        margin-top: 20px;
+        margin-bottom: 30px;
+        font-family: Prosto One;
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 24px;
+        text-align: center;
+      }
+  
+      .input_UserData {
+        margin-bottom: 15px;
+        height: 66px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+  
+        .input_reg_error {
+          margin-top: 5px;
+          margin-bottom: 5px;
+          font-family: Raleway;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 20px;
+          color: red
+        }
+  
+        .lbl {
+          font-family: Prosto One;
+          font-size: 12px;
+          font-weight: 400;
+          line-height: 16px;
+          color: rgba(138, 138, 138, 1);
+  
+        }
+      }
+  
+      .input_UserData input {
+        border: none;
+        outline: none;
+        border-bottom: 1px solid black;
+        padding-bottom: 3px;
+  
+        //text style
+        //styleName: Text description;
+        font-family: Raleway;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20px;
+        color: black;
+      }
+  
+      .input_UserData input::placeholder {
+        font-family: Raleway;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20px;
+        color: rgba(222, 219, 219, 1);
+      }
+  
+      .submitUserData {
+        width: 309px;
+        height: 40px;
+        margin: 0 auto;
+        border: none;
+        outline: none;
+        background: #000;
+        //text style
+        color: white;
+        font-family: Raleway;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 20px;
+      }
+  
+      .submitUserData:disabled {
+        background: rgba(240, 90, 0, 1);
+      }
+    }
+    .toAuthorization_box{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .toAuthorization_btn{
+        margin-top: 15px;
+        font-family: Raleway;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20px;
+        color: black;
+        border: none;
+        background: none;
+        outline: none;
+      }
+    }
+
+  }
+  
+  .submitReg{
+    width: 90%;
+    height: 50px;
+    background-color: black;
+    border: none;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    font-family: Prosto One;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    text-transform: uppercase;
+  }

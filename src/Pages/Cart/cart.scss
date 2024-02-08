@@ -1,24 +1,157 @@
-.cart-container{
-     width: 80%;
-     margin: 0 auto;
+.cart {
+    background: #dedbdb;
 }
-.titleBox{
+
+.cart-container {
+    padding: 30px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.titleBox {
+    padding-top: 25px;
+    padding-bottom: 25px;
     display: flex;
     justify-content: space-between;
+
+    font-family: Prosto One;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
 }
-.contentTitle{
+
+.contentTitle {
+    display: flex;
+    justify-content: space-between;
     margin-top: 60px;
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    .contentTitle2{
+    margin: 0 auto;
 
-        width: 50%;
+    .contentTitle-container {
+        width: 60%;
+
+        .contentTitle2 {
+            width: 90%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+    }
+}
+
+.products_container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contentTitleText {
+    font-family: Prosto One;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.cart_total_price {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+
+    .cart_total_price_container {
         display: flex;
-        align-items: center;
-        justify-content: space-around;
+        flex-direction: column;
+        justify-content: end;
+        width: 20%;
+
+        .overall_price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            font-family: Raleway;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 20px;
+            color: black;
+
+            border-bottom: 2px solid #a2a2a2;
+            padding-bottom: 7px;
+            margin-bottom: 10px;
+        }
+
+        .discount {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            font-family: Raleway;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 20px;
+            color: rgba(138, 138, 138, 1);
+
+            border-bottom: 2px solid #a2a2a2;
+            padding-bottom: 7px;
+            margin-bottom: 10px;
+        }
+
+        .total_price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            font-family: Prosto One;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 24px;
+        }
+
+        .total_price_text {
+            font-family: Prosto One;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 24px;
+            color: rgba(240, 90, 0, 1);
+        }
     }
-     .mainText{
-        width: 50%;
-    }
+}
+
+.cart_finish_link {
+    margin-top: 30px;
+    width: 280px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(240, 90, 0, 1);
+    border: 1px solid rgba(240, 90, 0, 1);
+
+    //styleName: Техт;
+    font-family: Raleway;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    color: white;
+    text-decoration: none;
+
+    border-radius: 10px;
+}
+
+.toCatalog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 264px;
+    height: 50px;
+    background: inherit;
+    border: 1px solid rgba(138, 138, 138, 1);
+    cursor: pointer;
+
+    text-decoration: none;
+    color: rgba(138, 138, 138, 1);
+
 }

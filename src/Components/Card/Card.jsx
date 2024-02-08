@@ -1,7 +1,7 @@
 import React from 'react'
 import './card.scss'
-import { useState } from 'react'
-import { createContext, useContext } from 'react'
+import { useState, useEffect } from 'react'
+
 
 import whiteHeart from '../../img/whiteHeart.png'
 import redHeart from '../../img/redHeart.png'
@@ -9,23 +9,45 @@ import cartBefore from '../../img/cartBefore.png'
 import cartAfter from '../../img/cartAfter.png'
 import weHave from '../../img/weHave.png'
 
-export default function Card(props) {
-    const[products, setProducts] = useState()
+export default function Card({ item, arrBasket, category, arrSaves, arrCardFunctions }) {
 
-    const [isHeart, setIsheart] = useState(false)
+    const { addToBasket, addToSaves, deleteFromSaves, deleteProductBasket } = arrCardFunctions
+
+    const [isHeart, setIsHeart] = useState(false)
+    const [isNew, setIsNew] = useState('')
+    const [isAviable, setIsAviable] = useState(false)
     const [isCart, setIsCart] = useState(false)
-    const [isStatus, setIsStatus] = useState(false)
-    const [isStock, setIsStock] = useState(false)
+    const [isAddedToCart, setIsAddedToCart] = useState(false);
+    const [isCartActivated, setIsCartActivated] = useState(false);
+    const [isAddedtoSaves, setIsAddedToSaves] = useState(false);
+
+    useEffect(() => {
+        setIsAddedToCart(false);
+        setIsAddedToSaves(false)
+        setIsCart(false);
+        setIsHeart(false)
+    }, [item]);
 
 
-
-    function handleHeart() {
-        setIsheart((prevIsHeart) => !prevIsHeart)
+    function checkFor(item) {
+        if (item.availability === false) {
+            setIsCart(false)
+        } else {
+            setIsCart(true)
+        }
     }
 
-    function handleCart() {
-        setIsCart((prevIsCart) => !prevIsCart)
-    }
+    // function checkProductAvailability(item) {
+    //     if (item.availability === true) {
+    //         setIsAviable(true)
+    //         return
+
+    //     } else {
+    //         setIsAviable(false)
+    //     }
+
+    // }
+
 
     return (
 
@@ -33,32 +55,67 @@ export default function Card(props) {
             <div className="card-container">
                 <div className="cardTerminal1">
                     <div className="cardStatus">
-
+                        {item.new && <div className='new_box'><p>Новинка!</p></div>}
                     </div>
                     <div className="cardSaves">
-                        {!isHeart ? <img onClick={handleHeart} src={whiteHeart} alt="" /> : <img onClick={handleHeart} src={redHeart}></img>}
+                        {!isHeart ?
+                            (<button onClick={() => {
+                                addToSaves(item, category)
+                                setIsHeart(true)
+                            }} className='addToSaves_btn'>
+                                <img src={whiteHeart} alt="" />
+                            </button>)
+                            :
+                            (<button onClick={() => {
+                                deleteFromSaves(item);
+                                setIsHeart(false)
+                            }} className='addToSaves_btn'>
+                                <img src={redHeart} alt="" />
+                            </button>)
+                        }
                     </div>
 
                 </div>
 
                 <div className="cardContent">
                     <div className="cardImage">
-                        <img className='cardImageContent' src={props.img} alt="" />
+                        <img className='cardImageContent' src={`/src/img/${item.image}`} alt="" />
                     </div>
                     <div className="cardInfo">
-                        <p>{props.title} {props.type} {props.material} {props.power} {props.size}  {props.model} {props.volume} {props.color}</p>
+                        <p>{item.title}  {item.type} {item.material} {item.power} {item.size}  {item.model} {item.volume} {item.color}</p>
                     </div>
                     <div className="cardTerminal2">
                         <div className="cardPrice">
-                            <p>{props.price}</p>
+                            <p>{item.price} руб</p>
                         </div>
                         <div className="cardFunctBox">
                             <div className="cardStatus">
-                                <img src={weHave} alt="" />
-                                <p>в наличии</p>
+                                {item.availability &&
+                                    <div className='weHave_box'>
+                                        <img src={weHave} alt="" />
+                                        <p className='weHave_text'>в наличии</p>
+                                    </div>
+                                }
+
                             </div>
                             <div className="cardCart">
-                                {!isCart ? <img onClick={handleCart} src={cartBefore} alt="" /> : <img onClick={handleCart} src={cartAfter}></img>}
+
+                                {!isCart ? (
+                                    <button className='basket_btn' onClick={() => {                              
+                                        checkFor(item);
+                                        deleteFromSaves(item);
+                                        addToBasket(item, category);                                
+                                    }}>
+                                        <img src={cartBefore} alt="" />
+                                    </button>
+                                ) : (
+                                    <button className='basket_btn' onClick={() => {
+                                        deleteProductBasket(item)
+                                        setIsCart(false)
+                                    }}>
+                                        <img src={cartAfter} alt="" />
+                                    </button>
+                                )}
                             </div>
                         </div>
                     </div>

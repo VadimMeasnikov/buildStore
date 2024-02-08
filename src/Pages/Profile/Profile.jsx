@@ -9,7 +9,7 @@ import adv_2 from '../../img/adv2.png'
 
 import './profile.scss'
 
-export default function Profile() {
+export default function Profile({arrUsers}) {
 
   const [isOrdersState, setIsOrdersState] = useState(true)
   const [isProfileState, setIsProfileState] = useState(false)

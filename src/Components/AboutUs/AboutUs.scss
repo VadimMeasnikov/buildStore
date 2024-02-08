@@ -34,7 +34,8 @@
             color: black;
         }
 
-        .infoText1, .infoText2 {
+        .infoText1,
+        .infoText2 {
             font-family: Raleway;
             font-size: 16px;
             font-weight: 400;
@@ -57,6 +58,11 @@
             color: white;
             text-transform: uppercase;
             cursor: pointer;
+        }
+
+        .toCatalogButton:hover {
+            background-color: #f05a00;
+
         }
     }
 }
