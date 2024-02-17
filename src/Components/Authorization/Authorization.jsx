@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import { signInWithEmailAndPassword } from 'firebase/auth'
-import { auth } from '../../server/server'
 
 import closeImg from '../../img/close.png'
 
@@ -12,18 +11,18 @@ export default function Authorization({ registration, authorization }) {
 
     const [error, setError] = useState('')
 
-    function authorizationFunct(email, password) {
-        signInWithEmailAndPassword(auth, email, password)
-            .then((user) => {
-                console.log(user);
-                authorization.setAuthorizationEmail('')
-                authorization.setAuthorizationPassword('')
-                authorization.setIsAuthorization(false)
-            }).catch((error) => {
-                setError('Аккаунт не найден')
-                console.log(error);
-            })
-    }
+    // function authorizationFunct(email, password) {
+    //     signInWithEmailAndPassword(auth, email, password)
+    //         .then((user) => {
+    //             console.log(user);
+    //             authorization.setAuthorizationEmail('')
+    //             authorization.setAuthorizationPassword('')
+    //             authorization.setIsAuthorization(false)
+    //         }).catch((error) => {
+    //             setError('Аккаунт не найден')
+    //             console.log(error);
+    //         })
+    // }
     //    console.log(authorization);
     return (
         <div className='authorization'>
@@ -31,7 +30,7 @@ export default function Authorization({ registration, authorization }) {
                 <div className="closeAuthBox"><button onClick={() => authorization.setIsAuthorization(!authorization.isAuthorization)}><img src={closeImg} alt="" /></button></div>
                 <form className='authForm' onSubmit={(e) => {
                     e.preventDefault();
-                    authorizationFunct(authorization.authorizationEmail, authorization.authorizationPassword);
+                    // authorizationFunct(authorization.authorizationEmail, authorization.authorizationPassword);
                 }}>
                     <h2 className='title_authorization'>
                         Авторизация
@@ -53,10 +52,3 @@ export default function Authorization({ registration, authorization }) {
         </div >
     )
 }
-// const authorization = {
-//     isAuthorization, setIsAuthorization,
-//     isAuthorizationValid, setIsAuthorizationValid,
-
-//     authorizationName, setAuthorizationName,
-//     authorizationPassword, setAuthorizationPassword
-//   }

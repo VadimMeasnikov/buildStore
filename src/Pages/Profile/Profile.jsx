@@ -3,17 +3,18 @@ import { Link } from 'react-router-dom'
 
 
 import ProfileData from '../../Components/ProfileData/ProfileData'
+import Registration from '../../Components/Registration/Registration'
 
 import adv_1 from '../../img/adv1.png'
 import adv_2 from '../../img/adv2.png'
 
 import './profile.scss'
 
-export default function Profile({arrUsers}) {
+export default function Profile({ arrUsers,  registration, authorization }) {
 
   const [isOrdersState, setIsOrdersState] = useState(true)
   const [isProfileState, setIsProfileState] = useState(false)
-
+  const [reg, setIsReg] = useState(true)
 
 
   function handlePageProfile() {
@@ -28,8 +29,10 @@ export default function Profile({arrUsers}) {
 
   return (
 
+
+
     <div className='profile'>
-   
+      {reg && <Registration  registration={registration} authorization={authorization} />}
       <div className="title"><h2>Личный кабинет</h2></div>
       <div className="profile-container">
         <div className="profile_content1">

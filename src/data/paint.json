@@ -7,10 +7,17 @@
       "price": 500,
       "model": "ПФ-115",
       "id": "1",
-      "image": "paintImg1.png",
       "availability": true,
       "new": false,
-      "count":1
+      "consumption": "от 0,15 до 0,18 кг/м2",
+      "brand": "FARBITEX",
+      "appointment" : "Для деревьев", 
+      "typeOfWorks" : "Наружное",
+      "packing": "Ведро",
+      "dryingTime": "1 час",
+
+      "count":1,
+      "image": "paintImg1.png"
     },
     {
       "title": "Масляная краска",
@@ -20,10 +27,17 @@
       "price": 700,
       "model": "ПФ-115",
       "id": "2",
-      "image": "paintImg.png",
       "availability": true,
       "new": false,
-      "count":1
+      "consumption": "от 0,15 до 0,18 кг/м2",
+      "brand": "FARBITEX",
+      "appointment" : "Для деревьев", 
+      "typeOfWorks" : "Наружное",
+      "packing": "Ведро",
+      "dryingTime": "1 час",
+
+      "count":1,
+      "image": "paintImg.png"
     },
     {
       "title": "Водоэмульсионная краска",
@@ -33,10 +47,17 @@
       "price": 900,
       "model": "ПФ-115",
       "id": "3",
-      "image": "paintImg1.png",
       "availability": true,
       "new": true,
-      "count":1
+      "consumption": "от 0,15 до 0,18 кг/м2",
+      "brand": "FARBITEX",
+      "appointment" : "Для деревьев", 
+      "typeOfWorks" : "Наружное",
+      "packing": "Ведро",
+      "dryingTime": "1 час",
+
+      "count":1,
+      "image": "paintImg1.png"
     },
     {
       "title": "Акварельная краска",
@@ -46,9 +67,16 @@
       "price": 200,
       "model": "ПФ-115",
       "id": "4",
-      "image": "paintImg2.png",
       "availability": true,
       "new": true,
-      "count":1
+      "consumption": "от 0,15 до 0,18 кг/м2",
+      "brand": "FARBITEX",
+      "appointment" : "Для деревьев", 
+      "typeOfWorks" : "Наружное",
+      "packing": "Ведро",
+      "dryingTime": "1 час",
+
+      "count":1,
+      "image": "paintImg2.png"
     }
   ]

@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, NavLink, Route, Routes } from 'react-router-dom'
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from 'firebase/auth'
-updateProfile
-import { auth } from './server/server.js'
+// import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from 'firebase/auth'
+// import { auth } from './server/server.js'
 
 import Navigation from './Components/Navigation/Navigation.jsx'
 import Footer from './Components/Footer/Footer.jsx'
 
 import Home from './Pages/Home/Home.jsx'
+import Catalog from './Pages/Catalog/Catalog.jsx'
 import Saves from './Pages/Saves/Saves.jsx'
 import Status from './Pages/Status/Status.jsx'
 import Profile from './Pages/Profile/Profile.jsx'
@@ -15,6 +15,7 @@ import Cart from './Pages/Cart/Cart.jsx'
 import Contacts from './Pages/Contacts/Contacts.jsx'
 import Order from './Pages/Order/Order.jsx'
 import Error404 from './Pages/Error404/Error404.jsx'
+import Product from './Pages/Product/Product.jsx'
 import NewCards from './Pages/New/NewCards.jsx'
 
 import usersData from './data/users.json'
@@ -74,6 +75,7 @@ function App() {
   const [userPasswordConfirmationRegDirty, setUserPasswordConfirmationRegDirty] = useState(false)
   const [userPasswordConfirmationRegError, setUserPasswordConfirmationRegError] = useState('Это поле обязательно!')
 
+
   const registration = {
     isRegistration, setIsRegistration,
     isRegFormValid, setIsRegFormValid,
@@ -120,27 +122,6 @@ function App() {
   }
 
 
-
-
-  function createNewUser(name, surname, tel, email, password, passwordCopy) {
-    if (password !== passwordCopy) {
-      return
-    }
-    let newUser = {
-      name, surname, tel, email, password
-    }
-    createUserWithEmailAndPassword(auth, email, password)
-      .then(
-        signInWithEmailAndPassword(auth, email, password).then(
-          updateProfile(auth.currentUser, { displayName: userNameReg })
-        )
-
-      )
-
-  }
-
-
-
   function addToSaves(product, category) {
     setSaves((prevSaves) => [...prevSaves, product]);
   }
@@ -168,7 +149,7 @@ function App() {
 
   function deleteProductBasket(item) {
     setBasket((prev) =>
-      prev.filter((itemDel) => itemDel.product.id !== item.product.id)
+      prev.filter((itemDel) => itemDel.product.id !== item.id)
     );
 
 
@@ -186,7 +167,6 @@ function App() {
             arrUsers={arrUsers}
             authorization={authorization}
             registration={registration}
-            createNewUser={createNewUser}
             arrBasket={arrBasket}
             products={products}
             product_pay={product_pay}
@@ -198,12 +178,14 @@ function App() {
             <Route path='/' element={<Home products={products} arrBasket={arrBasket} arrSaves={arrSaves} arrCardFunctions={arrCardFunctions} />} />
             <Route path='/saves' element={<Saves arrSaves={arrSaves} arrBasket={arrBasket} arrCardFunctions={arrCardFunctions} />} />
             <Route path='/status' element={<Status />} />
-            <Route path='/profile' element={<Profile arrUsers={arrUsers} />} />
+            <Route path='/profile' element={<Profile arrUsers={arrUsers}  registration={registration} authorization={authorization} />} />
             <Route path='/cart' element={<Cart arrBasket={arrBasket} products={products} product_pay={product_pay} arrCardFunctions={arrCardFunctions} />} />
             <Route path='/contacts' element={<Contacts />} />
             <Route path='/order' element={<Order />} />
-            <Route path='/error404' element={<Error404 />} />
+            <Route path='*' element={<Error404 />} />
             <Route path='/newcards' element={<NewCards products={products} arrCardFunctions={arrCardFunctions} />} />
+            <Route path='/catalog' element={<Catalog products={products} arrCardFunctions={arrCardFunctions}/>} />
+            <Route path='/product/:id'element={<Product/>} />
           </Routes>
         </main>
         <footer>

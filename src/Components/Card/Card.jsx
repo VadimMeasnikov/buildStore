@@ -1,7 +1,7 @@
 import React from 'react'
 import './card.scss'
 import { useState, useEffect } from 'react'
-
+import { Link } from 'react-router-dom'
 
 import whiteHeart from '../../img/whiteHeart.png'
 import redHeart from '../../img/redHeart.png'
@@ -9,7 +9,9 @@ import cartBefore from '../../img/cartBefore.png'
 import cartAfter from '../../img/cartAfter.png'
 import weHave from '../../img/weHave.png'
 
+
 export default function Card({ item, arrBasket, category, arrSaves, arrCardFunctions }) {
+
 
     const { addToBasket, addToSaves, deleteFromSaves, deleteProductBasket } = arrCardFunctions
 
@@ -37,21 +39,10 @@ export default function Card({ item, arrBasket, category, arrSaves, arrCardFunct
         }
     }
 
-    // function checkProductAvailability(item) {
-    //     if (item.availability === true) {
-    //         setIsAviable(true)
-    //         return
-
-    //     } else {
-    //         setIsAviable(false)
-    //     }
-
-    // }
-
 
     return (
 
-        <div className="card">
+        <Link to='/product' className="card">
             <div className="card-container">
                 <div className="cardTerminal1">
                     <div className="cardStatus">
@@ -101,10 +92,10 @@ export default function Card({ item, arrBasket, category, arrSaves, arrCardFunct
                             <div className="cardCart">
 
                                 {!isCart ? (
-                                    <button className='basket_btn' onClick={() => {                              
+                                    <button className='basket_btn' onClick={() => {
                                         checkFor(item);
                                         deleteFromSaves(item);
-                                        addToBasket(item, category);                                
+                                        addToBasket(item, category);
                                     }}>
                                         <img src={cartBefore} alt="" />
                                     </button>
@@ -121,6 +112,6 @@ export default function Card({ item, arrBasket, category, arrSaves, arrCardFunct
                     </div>
                 </div>
             </div>
-        </div>
+        </Link>
     )
 }

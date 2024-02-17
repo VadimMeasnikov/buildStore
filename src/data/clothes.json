@@ -9,6 +9,9 @@
         "image": "clothesImg2.png",
         "availability": false,
         "new": false,
+
+        "fabric": "Хлопок",
+        "brand": "WORKCLOTHES",       
         "count":1
     },
     {
@@ -21,6 +24,9 @@
         "image": "clothesImg1.png",
         "availability": false,
         "new": true,
+
+        "fabric": "Хлопок",
+        "brand": "WORKCLOTHES",  
         "count":1
     },
     {
@@ -33,6 +39,9 @@
         "image": "clothesImg.jpg",
         "availability": true,
         "new": false,
+
+        "fabric": "Хлопок / Синтетика",
+        "brand": "WORKCLOTHES",  
         "count":1
     },
     {
@@ -45,6 +54,9 @@
         "image": "clothesImg1.png",
         "availability": true,
         "new": true,
+
+        "fabric": "Пластик",
+        "brand": "WORKCLOTHES",  
         "count":1
     }
 ]

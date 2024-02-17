@@ -1,0 +1,63 @@
+.catalogPage{
+    background: #dedbdb;
+
+    .title-box {
+        padding-top: 30px;
+        width: 80%;
+        margin: 0 auto;
+        font-family: Prosto One;
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 24px;
+
+        margin-bottom: 35px;
+    }
+
+    .selectProducts {
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3px;
+        align-items: center;
+
+        .category_btn {
+            width: 33%;
+            height: 65px;
+
+            text-align: center;
+
+            font-family: Raleway;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 20px;
+
+            background: #efefef;
+            border: none;
+            outline: none;
+
+            border-radius: 7px;
+        }
+    }
+
+    .catalog_page-container {
+        width: 80%;
+        margin: 0 auto;
+        background: #efefef;
+        border-radius: 7px;
+        margin-top: 15px;
+        .catalogProducts {
+            width: 100%;
+            display: grid;
+            place-items: center;
+    
+            .products{
+                padding: 25px;
+                display: flex;
+                
+                flex-wrap: wrap;
+                gap: 50px;
+            }
+        }
+    }
+}

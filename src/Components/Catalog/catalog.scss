@@ -16,7 +16,10 @@
 
         .product_box {
             width: 310px;
-            height: 340px;
+            height: 430px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .categoryName {

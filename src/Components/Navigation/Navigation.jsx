@@ -19,7 +19,7 @@ import closeImg from '../../img/close.png'
 
 import './navigation.scss'
 
-export default function Navigation({ sumPrice, arrUsers, registration, authorization, createNewUser, arrBasket, product_pay, arrSaves }) {
+export default function Navigation({ sumPrice, arrUsers, registration, authorization, arrBasket, product_pay, arrSaves }) {
 
     const [isOpenForm, setIsOpenForm] = useState(false)
     const [nameInp, setNameInp] = useState("")
@@ -99,7 +99,7 @@ export default function Navigation({ sumPrice, arrUsers, registration, authoriza
             }
 
             {registration.isRegistration ? (
-                <Registration registration={registration} authorization={authorization} createNewUser={createNewUser} />
+                <Registration registration={registration} authorization={authorization} />
             ) : (
                 authorization.isAuthorization && <Authorization registration={registration} authorization={authorization} />
             )}

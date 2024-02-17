@@ -28,7 +28,7 @@ export const arrAllCatalog = [
         products:[...seasonTools]
     },
     {
-        category: "Инстурменты",
+        category: "Инструменты",
         products: [...tool]
     },
 ]

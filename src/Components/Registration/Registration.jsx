@@ -1,11 +1,46 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavLink, Link } from 'react-router-dom'
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 import './registration.scss'
 import closeImg from '../../img/close.png'
 
-export default function Registration({ registration, authorization, createNewUser }) {
+export default function Registration({ registration, authorization }) {
 
+    const auth = getAuth()
+    useEffect(() => {
+
+    })
+
+    
+
+    const passwordSymbolFilter = (event) => {
+        registration.setUserPasswordReg(event.target.value)
+        if (event.target.value.length < 6) {
+            registration.setUserPasswordRegError('Пароль должен содержать не менее 6')
+            if (!event.target.value) {
+                registration.setUserPasswordRegError('Пароль не должен быть пустым')
+            }
+        } else {
+            registration.setUserPasswordRegError('')
+        }
+
+    }
+
+    function validPass() {
+        return registration.userPasswordReg === registration.userPasswordConfirmationReg
+    }
+
+    async function createUser() {
+        if (!validPass()) {
+            registration.setUserPasswordConfirmationReg('Пароли не совпадают!')
+            return
+        }
+        registration.setUserPasswordConfirmationReg('')
+        createUserWithEmailAndPassword(auth, registration.userEmailReg, registration.userPasswordReg)
+            .then((user) => console.log(user))
+            .catch((e) => console.log(e))
+    }
 
     function blurHandler(event) {
         switch (event.target.name) {
@@ -60,25 +95,7 @@ export default function Registration({ registration, authorization, createNewUse
     //     }
     // }
 
-    const passwordSymbolFilter = (event) => {
-        registration.setUserPasswordReg(event.target.value)
-        if (event.target.value.length < 6) {
-            registration.setUserPasswordRegError('Пароль должен содержать не менее 6')
-            if (!event.target.value) {
-                registration.setUserPasswordRegError('Пароль не должен быть пустым')
-            }
-        } else {
-            registration.setUserPasswordRegError('')
-        }
 
-    }
-    function checkValidReg(name, surname, email, tel, password, passwordConfirmation) {
-        if (!name.value || !surname.value || !email.value || !tel.value) {
-            if (password === passwordConfirmation) {
-                return true
-            }
-        }
-    }
 
     return (
         <div className="formModal_reg" onClick={() => registration.setIsRegistration(false)}>
@@ -86,15 +103,8 @@ export default function Registration({ registration, authorization, createNewUse
                 <div className="closeFormBox"><Link to='/' className='closeFormBtn' onClick={() => registration.setIsRegistration(!registration.isRegistration)}> <img src={closeImg} alt="" /></Link>
                 </div>
                 <form onSubmit={(event) => {
+                    createUser()
                     event.preventDefault();
-                    createNewUser(
-                        registration.userNameReg,
-                        registration.userSurname,
-                        registration.userTelReg,
-                        registration.userEmailReg,
-                        registration.userPasswordReg,
-                        registration.userPasswordConfirmationReg
-                    );
                     registration.setIsRegistration(false);
                     registration.setUserNameReg('');
                     registration.setUserSurnameReg('');
@@ -102,9 +112,8 @@ export default function Registration({ registration, authorization, createNewUse
                     registration.setUserEmailReg('');
                     registration.setUserPasswordReg('');
                     registration.setUserPasswordConfirmationReg('');
-
                     authorization.setIsAuthorization(true);
-                    registration.setIsRegistration(false);
+                    registration.setIsRegistration((prev) => !prev);
                 }}
                     className='regForm'>
 
@@ -144,13 +153,14 @@ export default function Registration({ registration, authorization, createNewUse
                     <div className="input_UserData">
                         <label className='lbl'>Подтверждение пароля</label>
                         <input placeholder='Подтвердите пароль' id='userPasswordConfirmation' type="password" value={registration.userPasswordConfirmationReg} onChange={(e) => registration.setUserPasswordConfirmationReg(e.target.value)} />
+                        {registration.userPasswordConfirmationReg &&  <div className='input_reg_error'>{registration.setUserPasswordConfirmationRegError}</div>}
                     </div>
                     <button className='submitReg' type='submit'>зарегистрироваться</button>
 
                 </form>
                 <div className="toAuthorization_box">  <button onClick={() => {
-                    registration.setIsRegistration(!registration.isRegistration)
-                    authorization.setIsAuthorization(!authorization.isAuthorization)
+                    registration.setIsRegistration((prev) => !prev)
+                    authorization.setIsAuthorization((prev) => !prev)
                 }} className='toAuthorization_btn'>Уже зарегистрированы? Войти</button></div>
 
             </div>
