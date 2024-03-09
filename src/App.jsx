@@ -149,13 +149,12 @@ function App() {
 
   function deleteProductBasket(item) {
     setBasket((prev) =>
-      prev.filter((itemDel) => itemDel.product.id !== item.id)
+      prev.filter((itemDel) => itemDel.product.id !== item.product.id)
     );
 
 
   }
-  let arrCardFunctions = { addToBasket, addToSaves, deleteFromSaves, deleteProductBasket }
-
+  const arrCardFunctions = { addToBasket, addToSaves, deleteFromSaves, deleteProductBasket }
 
 
   return (
@@ -185,7 +184,7 @@ function App() {
             <Route path='*' element={<Error404 />} />
             <Route path='/newcards' element={<NewCards products={products} arrCardFunctions={arrCardFunctions} />} />
             <Route path='/catalog' element={<Catalog products={products} arrCardFunctions={arrCardFunctions}/>} />
-            <Route path='/product/:id'element={<Product/>} />
+            <Route path='/product/:id'element={<Product products={products} arrCardFunctions={arrCardFunctions}/>} />
           </Routes>
         </main>
         <footer>

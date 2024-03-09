@@ -1,0 +1,209 @@
+.cardInfo {
+    display: grid;
+    place-items: center;
+
+    .cardInfo-container {
+        padding: 15px;
+        width: 80%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        background: white;
+
+        .main-content {
+            display: flex;
+            justify-content: space-between;
+
+            .cardInfo-content1 {
+                width: 45%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+
+                .main_item_image {
+                    width: 360px;
+                    height: 360px;
+                    align-items: baseline;
+                }
+
+                .secondary_item_image {
+                    width: 95%;
+                    display: flex;
+                    justify-content: space-around;
+
+                    button {
+                        border: none;
+                        background: none;
+                        outline: none;
+                        cursor: pointer;
+                    }
+
+                    .secondary_item_image {
+                        width: 90px;
+                        height: 90px;
+                        box-shadow: 0px 5px 20px 0px rgba(240, 90, 0, 0.2);
+                        border-radius: 10px;
+                    }
+                }
+            }
+
+            .cardInfo-content2 {
+                padding-top: 25px;
+                width: 50%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: start;
+
+                .item_title {
+                    font-family: Prosto One;
+                    font-size: 30px;
+                    font-weight: 400;
+                    line-height: 32px;
+                }
+
+                .item_status {
+                    padding-top: 15px;
+                    padding-bottom: 15px;
+
+                    .item_status_text_true {
+                        font-family: Raleway;
+                        font-size: 16px;
+                        font-weight: 500;
+                        line-height: 20px;
+                        color: rgba(18, 105, 53, 1);
+                    }
+
+                    .item_status_text_false {
+                        font-family: Raleway;
+                        font-size: 16px;
+                        font-weight: 500;
+                        line-height: 20px;
+                        color: rgb(255, 0, 0);
+                    }
+                }
+
+                .item_info {
+                    padding-top: 15px;
+                    padding-bottom: 15px;
+                    font-family: Raleway;
+                    font-size: 19px;
+                    font-weight: 400;
+                    line-height: 20px;
+                    letter-spacing: 0em;
+                }
+
+                .item_price {
+                    padding-top: 15px;
+                    padding-bottom: 15px;
+                    font-family: Prosto One;
+                    font-size: 30px;
+                    font-weight: 400;
+                    line-height: 32px;
+                }
+
+                .item_funct {
+                    width: 30%;
+                    padding-top: 15px;
+                    padding-bottom: 15px;
+                    display: flex;
+                    justify-content: space-between;
+
+                    .toBasket {
+
+
+                        border: none;
+                        outline: none;
+
+
+                        width: 155px;
+                        height: 50px;
+                        background: rgba(240, 90, 0, 1);
+                        border-radius: 7px;
+
+                        font-family: Raleway;
+                        font-size: 16px;
+                        font-weight: 500;
+                        line-height: 20px;
+                        color: white;
+                        text-transform: uppercase;
+                        cursor: pointer;
+                    }
+
+                    .toBasket:hover {
+                        background: rgba(33, 37, 38, 1);
+                    }
+
+                    .addToSaves_btn {
+                        border: none;
+                        outline: none;
+                        background: none;
+                        width: 50px;
+                        height: 50px;
+
+                        img {
+                            image-rendering: auto;
+                            width: 60%;
+                            height: 60%;
+                        }
+
+                    }
+                }
+            }
+        }
+
+        .description-content {
+            padding-top: 30px;
+            width: 95%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+
+            .description-title {
+                padding-top: 15px;
+                padding-bottom: 15px;
+                font-family: Prosto One;
+                font-size: 20px;
+                font-weight: 400;
+                line-height: 24px;
+            }
+
+            .description {
+                padding-top: 35px;
+                width: 60%;
+                display: flex;
+                justify-content: space-between;
+
+                .description-content1,
+                .description-content2 {
+                    display: flex;
+                    flex-direction: column;
+
+                    .item_description_box {
+                        display: flex;
+                        align-items: center;
+                        max-width: 250px;
+
+                        .item_description_text {
+                            font-family: Prosto One;
+                            font-size: 16px;
+                            font-weight: 500;
+                            line-height: 20px;
+                        }
+
+                        .item_description_content {
+                            padding-left: 10px;
+                            font-family: Raleway;
+                            font-size: 16px;
+                            font-weight: 400;
+                            line-height: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

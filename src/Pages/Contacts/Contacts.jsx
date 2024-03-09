@@ -11,7 +11,6 @@ export default function Contacts() {
             <div className="contacts_page_container">
                 <div className="contacts_content">
                     <div className="contancts_content1">
-                        <img src={map} alt="" />
                     </div>
                     <div className="contacts_content2">
                         <div className="address_1 address_contact">

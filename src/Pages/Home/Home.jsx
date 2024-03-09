@@ -14,7 +14,7 @@ export default function Home({ products, arrBasket, arrSaves, arrCardFunctions, 
   const navigate = useNavigate()
   useEffect(() => {
     navigate('/')
-  })
+  }, [])
 
   return (
     <div className='home'>

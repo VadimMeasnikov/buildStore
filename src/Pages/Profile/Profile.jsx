@@ -1,5 +1,7 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+
 
 
 import ProfileData from '../../Components/ProfileData/ProfileData'
@@ -10,20 +12,37 @@ import adv_2 from '../../img/adv2.png'
 
 import './profile.scss'
 
-export default function Profile({ arrUsers,  registration, authorization }) {
+export default function Profile({ arrUsers, registration, authorization }) {
 
   const [isOrdersState, setIsOrdersState] = useState(true)
   const [isProfileState, setIsProfileState] = useState(false)
+  const [activeUser, setActiveUser] = useState(false)
   const [reg, setIsReg] = useState(true)
 
 
+  const auth = getAuth()
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setActiveUser(user);
+        registration.isRegistration(false)
+        authorization.isAuthorization(false)
+        console.log(user);
+      } else {
+        registration.isRegistration(true)
+      }
+    })
+  }, [onAuthStateChanged])
+
+
   function handlePageProfile() {
-    setIsOrdersState((prevIsOrdersState) => !prevIsOrdersState)
-    setIsProfileState((prevIsProfileState) => !prevIsProfileState)
+    setIsOrdersState(false)
+    setIsProfileState(true)
   }
   function handlePageOrderHistory() {
-    setIsOrdersState((prevIsOrdersState) => !prevIsOrdersState)
-    setIsProfileState((prevIsProfileState) => !prevIsProfileState)
+    setIsOrdersState(true)
+    setIsProfileState(false)
   }
 
 
@@ -32,13 +51,13 @@ export default function Profile({ arrUsers,  registration, authorization }) {
 
 
     <div className='profile'>
-      {reg && <Registration  registration={registration} authorization={authorization} />}
+
       <div className="title"><h2>Личный кабинет</h2></div>
       <div className="profile-container">
         <div className="profile_content1">
           <div className="profile_btn">
-            <button onClick={handlePageProfile} className='ordHistory'>История заказов</button>
-            <button onClick={handlePageOrderHistory} className='userInfo'>Личный кабинет</button>
+            <button onClick={handlePageOrderHistory} className='ordHistory'>История заказов</button>
+            <button onClick={handlePageProfile} className='userInfo'>Личный кабинет</button>
           </div>
           <div className="profile_advertisement">
             <Link className='adv_box'>
@@ -50,7 +69,7 @@ export default function Profile({ arrUsers,  registration, authorization }) {
           </div>
         </div>
         <div className="profile_content2">
-          {!isProfileState ? <p>Заказы</p> : <ProfileData arrUsers={arrUsers} />}
+          {!isProfileState ? <p>Заказы</p> : <ProfileData arrUsers={arrUsers} registration={registration} authorization={authorization} />}
         </div>
       </div>
     </div>

@@ -1,18 +1,26 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { redirect } from 'react-router-dom';
 
 import './profileData.scss'
 
-export default function ProfileData({ arrUsers }) {
-    const[newUserPassword, setNewUserPassword] = useState('')
-    const[newUserPasswordConfirmation, setNewUserPasswordConfirmation] = useState('')
-    const[newUserPasswordConfirmationDirty, setNewUserPasswordConfirmationDirty] = useState(false)
-    const[newUserPasswordConfirmationError, setNewUserPasswordConfirmationError] = useState('')
-    const[passwordsState, setPasswordsState] = useState(false)
+import Authorization from '../Authorization/Authorization';
+import Registration from '../Registration/Registration';
 
-    function comparePasswords(newPassword, newPasswordConfirmation){
-        if(newPassword ===  newPasswordConfirmation){
+export default function ProfileData({ arrUsers, registration, authorization }) {
+
+    const [pageState, setPageState] = useState('')
+
+    const [newUserPassword, setNewUserPassword] = useState('')
+    const [newUserPasswordConfirmation, setNewUserPasswordConfirmation] = useState('')
+    const [newUserPasswordConfirmationDirty, setNewUserPasswordConfirmationDirty] = useState(false)
+    const [newUserPasswordConfirmationError, setNewUserPasswordConfirmationError] = useState('')
+    const [passwordsState, setPasswordsState] = useState(false)
+
+
+    function comparePasswords(newPassword, newPasswordConfirmation) {
+        if (newPassword === newPasswordConfirmation) {
             setPasswordsState(true)
         } else {
             setPasswordsState(false)
@@ -25,6 +33,11 @@ export default function ProfileData({ arrUsers }) {
 
     return (
         <div className='profile_comp'>
+            {registration.isRegistration ?
+                (<Registration registration={registration} authorization={authorization} />)
+                :
+                (<Authorization registration={registration} authorization={authorization} />)
+            }
             <div className="title_profile_comp">Личные данные</div>
             <div className="profile_comp_container">
 

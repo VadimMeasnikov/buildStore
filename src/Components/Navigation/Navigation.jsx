@@ -98,13 +98,6 @@ export default function Navigation({ sumPrice, arrUsers, registration, authoriza
                 </div>
             }
 
-            {registration.isRegistration ? (
-                <Registration registration={registration} authorization={authorization} />
-            ) : (
-                authorization.isAuthorization && <Authorization registration={registration} authorization={authorization} />
-            )}
-
-
             <div className="navigation-content1">
                 <div className="navigation-content1-container">
                     <NavLink to='/' className="logo">
@@ -130,7 +123,7 @@ export default function Navigation({ sumPrice, arrUsers, registration, authoriza
                         <NavLink to='/status' id='status' className="functCard">
                             <img src={cart} alt="" />
                         </NavLink>
-                        <NavLink to='/profile' onClick={() => registration.setIsRegistration(true)} id='profile' className="functCard">
+                        <NavLink to='/profile' id='profile' className="functCard">
                             <img src={profileImg} alt="" />
                         </NavLink>
                         <NavLink to='/cart' id='cart' className="functCard">

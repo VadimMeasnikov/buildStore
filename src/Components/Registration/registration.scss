@@ -7,8 +7,9 @@
     background: #000000d8;
     display: grid;
     place-items: center;
-  
+    z-index: 10000;
     .formModal_reg-container {
+   
       width: 622px;
       height: 700px;
       background: hsl(0, 0%, 100%);

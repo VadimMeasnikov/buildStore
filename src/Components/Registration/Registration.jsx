@@ -85,6 +85,27 @@ export default function Registration({ registration, authorization }) {
             registration.setUserTelRegError('')
         }
     }
+
+
+    function clearInputs(){
+        registration.setUserNameReg('');
+        registration.setUserSurnameReg('');
+        registration.setUserTelReg('');
+        registration.setUserEmailReg('');
+        registration.setUserPasswordReg('');
+        registration.setUserPasswordConfirmationReg('');
+
+        console.log(
+            registration.userNameReg,
+            registration.userSurnameReg,
+            registration.userTelReg,
+            registration.userEmailReg,
+            registration.userPasswordReg,
+            registration.userPasswordConfirmationReg,
+        )
+    }
+
+
     // const emailsSymbolFilter = (event) => {
     //     registration.setUserEmailReg(event.target.value);
     //     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -103,17 +124,12 @@ export default function Registration({ registration, authorization }) {
                 <div className="closeFormBox"><Link to='/' className='closeFormBtn' onClick={() => registration.setIsRegistration(!registration.isRegistration)}> <img src={closeImg} alt="" /></Link>
                 </div>
                 <form onSubmit={(event) => {
-                    createUser()
+                    createUser();
                     event.preventDefault();
                     registration.setIsRegistration(false);
-                    registration.setUserNameReg('');
-                    registration.setUserSurnameReg('');
-                    registration.setUserTelReg('');
-                    registration.setUserEmailReg('');
-                    registration.setUserPasswordReg('');
-                    registration.setUserPasswordConfirmationReg('');
                     authorization.setIsAuthorization(true);
                     registration.setIsRegistration((prev) => !prev);
+                    clearInputs();
                 }}
                     className='regForm'>
 
@@ -159,8 +175,8 @@ export default function Registration({ registration, authorization }) {
 
                 </form>
                 <div className="toAuthorization_box">  <button onClick={() => {
-                    registration.setIsRegistration((prev) => !prev)
-                    authorization.setIsAuthorization((prev) => !prev)
+                    registration.setIsRegistration(false)
+                    authorization.setIsAuthorization(true)
                 }} className='toAuthorization_btn'>Уже зарегистрированы? Войти</button></div>
 
             </div>

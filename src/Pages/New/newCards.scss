@@ -1,5 +1,7 @@
 .newCards {
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: #dedbdb;
 
     .newCards-title {
@@ -11,14 +13,16 @@
 
     .newCards-container {
         width: 80%;
-        margin: 0 auto;
 
         padding-top: 50px;
         padding-bottom: 50px;
         .items-container {
             display: flex;
+            justify-content: center;
+            align-items: center;
             flex-wrap: wrap;
-            gap: 50px;
+            gap: 20px;
         }
     }
 }
+

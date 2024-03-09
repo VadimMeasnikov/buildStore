@@ -1,9 +1,10 @@
 [
     {
+      "category": "Малярные товары",
       "title": "Акриловая краска",
       "color": "White",
       "type": "Matte",
-      "volume": "500 мл",
+      "volume": "900 мл",
       "price": 500,
       "model": "ПФ-115",
       "id": "1",
@@ -17,13 +18,19 @@
       "dryingTime": "1 час",
 
       "count":1,
-      "image": "paintImg1.png"
+      "image": "paintImg1.png",
+      "image_1": "paintImg.png",
+      "image_2": "paintImg2.png",
+      "image_3": "paintImg.png",
+      "image_4": "paintImg2.png",
+      "image_5": "paintImg.png"
     },
     {
+      "category": "Малярные товары",
       "title": "Масляная краска",
       "color": "Black",
       "type": "Glossy",
-      "volume": "250 мл",
+      "volume": "800 мл",
       "price": 700,
       "model": "ПФ-115",
       "id": "2",
@@ -40,10 +47,11 @@
       "image": "paintImg.png"
     },
     {
+      "category": "Малярные товары",
       "title": "Водоэмульсионная краска",
       "color": "Blue",
       "type": "Semi-matte",
-      "volume": "1 литр",
+      "volume": "1000 мл",
       "price": 900,
       "model": "ПФ-115",
       "id": "3",
@@ -60,10 +68,11 @@
       "image": "paintImg1.png"
     },
     {
+      "category": "Малярные товары",
       "title": "Акварельная краска",
       "color": "Red",
       "type": "Transparent",
-      "volume": "12 мл",
+      "volume": "1200 мл",
       "price": 200,
       "model": "ПФ-115",
       "id": "4",

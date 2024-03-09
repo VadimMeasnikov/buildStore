@@ -7,7 +7,6 @@ export default function NewCards({ products, arrCardFunctions}) {
 
     return (
         <div className='newCards'>
-
             <div className="newCards-container">
                 <div className="title-box"> <h2 className='newCards-title'>Новинки</h2></div>
                 <div className="items-container">

@@ -20,7 +20,7 @@ export default function BasketProduct({ item, arrBasket, product_pay, basketItem
                     <img src={`/src/img/${item.product.image}`} alt="" />
                 </div>
                 <div className="basket-product-title">
-                    <p className='category-title'>{item.category}</p>
+                    <p className='category-title'>{item.product.category}</p>
                     <p className='product-title'>{item.product.title} </p>
                 </div>
                 <div className="cost">

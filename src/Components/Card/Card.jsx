@@ -42,7 +42,7 @@ export default function Card({ item, arrBasket, category, arrSaves, arrCardFunct
 
     return (
 
-        <Link to='/product' className="card">
+        <div className="cardBox">
             <div className="card-container">
                 <div className="cardTerminal1">
                     <div className="cardStatus">
@@ -67,14 +67,19 @@ export default function Card({ item, arrBasket, category, arrSaves, arrCardFunct
                     </div>
 
                 </div>
+                <Link to={`/product/${item.id}`} className="card">
+                    <div className="cardContent">
+                        <div className="cardImage">
+                            <img className='cardImageContent' src={`/src/img/${item.image}`} alt="" />
+                        </div>
+                        <div className="cardInfo">
+                            <p>{item.title}  {item.type} {item.material} {item.power} {item.size}  {item.model} {item.volume} {item.color}</p>
+                        </div>
 
-                <div className="cardContent">
-                    <div className="cardImage">
-                        <img className='cardImageContent' src={`/src/img/${item.image}`} alt="" />
                     </div>
-                    <div className="cardInfo">
-                        <p>{item.title}  {item.type} {item.material} {item.power} {item.size}  {item.model} {item.volume} {item.color}</p>
-                    </div>
+                </Link>
+                <div className="cardCart">
+
                     <div className="cardTerminal2">
                         <div className="cardPrice">
                             <p>{item.price} руб</p>
@@ -89,29 +94,28 @@ export default function Card({ item, arrBasket, category, arrSaves, arrCardFunct
                                 }
 
                             </div>
-                            <div className="cardCart">
 
-                                {!isCart ? (
-                                    <button className='basket_btn' onClick={() => {
-                                        checkFor(item);
-                                        deleteFromSaves(item);
-                                        addToBasket(item, category);
-                                    }}>
-                                        <img src={cartBefore} alt="" />
-                                    </button>
-                                ) : (
-                                    <button className='basket_btn' onClick={() => {
-                                        deleteProductBasket(item)
-                                        setIsCart(false)
-                                    }}>
-                                        <img src={cartAfter} alt="" />
-                                    </button>
-                                )}
-                            </div>
                         </div>
                     </div>
+
+                    {!isCart ? (
+                        <button className='basket_btn' onClick={() => {
+                            checkFor(item);
+                            deleteFromSaves(item);
+                            addToBasket(item, category);
+                        }}>
+                            <img src={cartBefore} alt="" />
+                        </button>
+                    ) : (
+                        <button className='basket_btn' onClick={() => {
+                            deleteProductBasket(item)
+                            setIsCart(false)
+                        }}>
+                            <img src={cartAfter} alt="" />
+                        </button>
+                    )}
                 </div>
             </div>
-        </Link>
+        </div>
     )
 }
