@@ -101,7 +101,7 @@ export default function Navigation({ sumPrice, arrUsers, registration, authoriza
             <div className="navigation-content1">
                 <div className="navigation-content1-container">
                     <NavLink to='/' className="logo">
-                        <img src={logo} alt="logo" />
+                        <img className='web_logo' src={logo} alt="logo" />
                     </NavLink>
                     <div className="timetable">
                         <p className='time'>Время работы:
@@ -152,8 +152,8 @@ export default function Navigation({ sumPrice, arrUsers, registration, authoriza
 
                     <div className="link-box">
                         <Link to='/catalog' className='toCatalog_link'>
-                            <img src={burgerImg} alt="" />
-                            <p>Каталог товаров</p>
+                            <img className='burger_link_img' src={burgerImg} alt="" />
+                            <p className='toCatalog_link_text'>Каталог товаров</p>
                         </Link>
                     </div>
                     <div className="links">
@@ -163,9 +163,9 @@ export default function Navigation({ sumPrice, arrUsers, registration, authoriza
                         <Link to='/newcards' className='navMainLink' href="#">Новинки</Link>
                     </div>
                     <div className="social">
-                        <a className='navLink' href="#"><img style={{ width: "30px" }} src={inst} alt="" /></a>
-                        <a className='navLink' href="#"><img style={{ width: "30px" }} src={vk} alt="" /></a>
-                        <a className='navLink' href="#"><img style={{ width: "30px" }} src={facebook} alt="" /></a>
+                        <a className='navLink' href="#"><img className='social_img'  style={{ width: "30px" }} src={inst} alt="" /></a>
+                        <a className='navLink' href="#"><img className='social_img' style={{ width: "30px" }} src={vk} alt="" /></a>
+                        <a className='navLink' href="#"><img className='social_img' style={{ width: "30px" }} src={facebook} alt="" /></a>
                     </div>
                     <div className="search">
                         <img src={searchImg} alt="" />

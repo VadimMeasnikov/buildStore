@@ -116,6 +116,9 @@
             line-height: 24px;
             color: rgba(240, 90, 0, 1);
         }
+        @media (max-width:1366px) {
+            width: 50%;
+        }
     }
 }
 
@@ -138,6 +141,10 @@
     text-decoration: none;
 
     border-radius: 10px;
+
+    @media (max-width:1366px) {
+        width: 100%;
+    }
 }
 
 .toCatalog {

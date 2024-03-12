@@ -7,9 +7,11 @@
 
     .advertisement-container {
         width: 75%;
+        height: 100%;
         margin: 0 auto;
         display: flex;
         align-items: center;
+
 
         .moreInfoButton_content {
             width: 58px;
@@ -77,6 +79,12 @@
 
         }
 
+        .content2__global{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
         .content2 {
             margin-right: 12px;
             margin-left: 11px;
@@ -90,7 +98,8 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            .titleContent2{
+
+            .titleContent2 {
                 padding: 20px 20px 0px 20px;
                 font-family: Prosto One;
                 font-size: 40px;
@@ -107,8 +116,8 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            
-            .titleContent3{
+
+            .titleContent3 {
                 padding: 20px 20px 0px 20px;
                 font-family: Prosto One;
                 font-size: 20px;
@@ -155,13 +164,77 @@
                 color: white;
             }
         }
+
+
     }
 }
 
 @media (max-width: 1280px) {
-    .advertisement{
+    .advertisement {
         display: flex;
         justify-content: center;
         align-items: center;
     }
+}
+
+
+@media (max-width:1024px) {
+    .advertisement {
+        height: 1000px;
+        .advertisement-container {
+            display: flex;
+            
+            display: grid;
+            place-items: center;
+            width: 95%;
+            margin: 0 auto;
+
+            .content1 {
+                width: 974px;
+            }
+
+            .content2__global {
+                padding-top: 10px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                .content2{
+                    width: 50%;
+                }
+                .content3{
+                    width: 50%;
+                    .topContent3, .lowContent3{
+                       margin-top: 5px;
+                        width: 455px;
+                        height: 50%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:768px) {
+    .advertisement {
+       .advertisement-container{
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 0 auto;
+        .content1{
+            width: 730px;
+        }
+        .content2__global{
+            .content3{
+                .topContent3, .lowContent3{
+                    width: 340px;
+                }
+            }
+        }
+       }
+
+    }
+
 }

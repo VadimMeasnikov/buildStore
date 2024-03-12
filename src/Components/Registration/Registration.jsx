@@ -106,18 +106,6 @@ export default function Registration({ registration, authorization }) {
     }
 
 
-    // const emailsSymbolFilter = (event) => {
-    //     registration.setUserEmailReg(event.target.value);
-    //     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    //     if (!re.test(String(event.target.value).toLowerCase())) {
-    //         registration.setUserEmailRegError('Некорректный Email')
-    //     } else {
-    //         registration.setUserEmailRegError('')
-    //     }
-    // }
-
-
-
     return (
         <div className="formModal_reg" onClick={() => registration.setIsRegistration(false)}>
             <div className="formModal_reg-container" onClick={(e) => e.stopPropagation()}>

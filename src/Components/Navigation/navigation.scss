@@ -70,8 +70,11 @@
                 font-family: Raleway;
                 font-size: 16px;
                 font-weight: 500;
-                line-height: 20px;
                 color: white;
+
+                @media (max-width: 1024px) {
+                    font-size: 12px;
+                }
             }
 
             .callBox p {
@@ -79,6 +82,10 @@
                 font-size: 18px;
                 font-weight: 600;
                 line-height: 20px;
+
+                @media (max-width: 1024px) {
+                    font-size: 12px;
+                }
             }
 
             .orderCall {
@@ -93,6 +100,10 @@
                 ;
                 border: none;
                 cursor: pointer;
+
+                @media (max-width: 1024px) {
+                    font-size: 12px;
+                }
             }
 
 
@@ -103,6 +114,35 @@
                 font-weight: 500;
                 line-height: 20px;
                 color: white;
+            }
+
+            @media (max-width: 768px) {
+
+                #saves,
+                #status,
+                #profile,
+                #cart {
+                    width: 70px;
+                }
+
+                .functBox {
+                    width: 280px;
+                }
+
+                .logo {
+                    .web_logo {
+                        width: 60px;
+                        height: 40px;
+                    }
+                }
+
+                .timetable {
+                    width: 100px;
+                }
+
+                .productsPrice {
+                    font-size: 10px;
+                }
             }
         }
     }
@@ -152,6 +192,13 @@
                     line-height: 20px;
                     text-decoration: none;
                     color: white;
+
+                    @media (max-width: 1024px) {
+                        font-size: 12px;
+                    }
+                    @media (max-width: 768px) {
+                        font-size: 10px;
+                    }
                 }
 
                 .navMainLink:hover {
@@ -165,6 +212,13 @@
                     margin-left: 5px;
                     margin-right: 5px;
                 }
+
+                @media (max-width:768px) {
+                    .social_img{
+                        width: 25px;
+                        height: 25px;
+                    }
+                }
             }
 
             .search {
@@ -174,7 +228,7 @@
                 display: flex;
                 align-items: center;
                 background: white;
-                width: 310px;
+                width: 35%;
                 border-radius: 15px;
 
                 .searchInp {
@@ -182,6 +236,32 @@
                     height: 80%;
                     outline: none;
                     border: none;
+                }
+
+                @media (max-width:768px) {
+                    .search {
+                        width: 35%;
+                    }
+                }
+            }
+        }
+
+        @media (max-width:768px) {
+            .link-box {
+                width: 60px;
+
+                .toCatalog_link {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    .burger_link_img {
+                        width: 90%;
+                    }
+
+                    .toCatalog_link_text {
+                        display: none;
+                    }
                 }
             }
         }
@@ -191,7 +271,7 @@
 .link-box {
     width: 200px;
     height: 50px;
- 
+
     border: 1px solid rgba(240, 90, 0, 1);
     display: flex;
     justify-content: center;
@@ -213,10 +293,7 @@
 
     }
 }
-.link-box:hover{
+
+.link-box:hover {
     background-color: rgba(240, 90, 0, 1);
-}
-
-@media (max-width:1024px) {
-
 }
