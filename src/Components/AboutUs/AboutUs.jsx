@@ -1,12 +1,10 @@
 import './AboutUs.scss'
-import AboutImg from '../../img/AboutImg.png'
 
 export default function AboutUs() {
     return (
         <div className='aboutUs'>
             <div className='aboutUs-container'>
                 <div className="content">
-                    <img src={AboutImg} alt="" />
                 </div>
                 <div className="info">
                     <h2 className='titleAbout'>О нас</h2>

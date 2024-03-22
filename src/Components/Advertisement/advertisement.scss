@@ -217,14 +217,17 @@
 
 @media (max-width:768px) {
     .advertisement {
+        height: 1000px;
        .advertisement-container{
-        width: 95%;
+        padding: 35px;
+
+        width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         margin: 0 auto;
         .content1{
-            width: 730px;
+            width: 698px;
         }
         .content2__global{
             .content3{
@@ -236,5 +239,10 @@
        }
 
     }
+}
 
+@media (max-width: 480px) {
+    .advertisement{
+        display: none;
+    }
 }

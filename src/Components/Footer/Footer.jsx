@@ -26,7 +26,7 @@ export default function Footer() {
           <Link className='footerLink_box2'>Распродажи</Link>
         </div>
         <div className="footer-box3">
-          <Link className='logoLink'>
+          <Link to='/' className='logoLink'>
             <img src={logo} alt="logo" />
           </Link>
 

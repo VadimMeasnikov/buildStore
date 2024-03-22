@@ -6,6 +6,12 @@
     display: grid;
     place-items: center;
 
+    border-bottom: 5px solid #dedbdb;
+
+    @media (max-width:480px) {
+        height: auto;           
+    }
+
     .basketProduct-container {
         width: 100%;
         padding: 10px;
@@ -13,148 +19,247 @@
         justify-content: space-between;
         align-items: center;
 
+        @media (max-width:480px) {
+            flex-direction: column;   
+            width: 85%;       
+            margin-right: 25px;
+        }
+
+
         .product-logo img {
             width: 60px;
             height: 60px;
         }
 
-        .basket-product-title {
+        .item_main_info {
             display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
-            width: 290px;
+            justify-content: space-between;
 
-            .category-title {
-                font-family: Raleway;
-                font-size: 14px;
-                font-weight: 400;
-                line-height: 16px;
-                color: rgba(240, 90, 0, 1);
-            }
 
-            .product-title {
-                font-family: Raleway;
-                font-size: 16px;
-                font-weight: 500;
-                line-height: 20px;
-                color: black;
-            }
-            @media (max-width:1366px) {
-               width: 360px;
-            }
-            @media (max-width: 1024px) {
-                width: 220px;
-            }
-        }
 
-        .cost {
-
-            width: 250px;
-            display: flex;
-            justify-content: end;
-            align-items: center;
-            padding-right: 30px;
-
-            .cost-title {
-                font-family: Raleway;
-                font-size: 16px;
-                font-weight: 500;
-                line-height: 20px;
-                color: black;
-            }
-            @media (max-width: 1366px) {
-                width: 100px;
-            }
-            @media (max-width: 1024px) {
-                width: 100px;
-            }
-        }
-
-        .count {
-            width: 250px;
-            display: grid;
-            place-items: center;
-            //text
-            font-family: Raleway;
-            font-size: 16px;
-            font-weight: 500;
-            line-height: 20px;
-            color: black;
-
-            .count-container {
-                width: 90%;
+            .basket-product-title {
                 display: flex;
-                justify-content: space-around;
+                flex-direction: column;
+                justify-content: center;
                 align-items: center;
+                width: 290px;
 
-                .countProduct_btn {
-                    width: 30px;
-                    height: 30px;
-                    border: none;
-                    background: none;
-                    outline: none;
-                    cursor: pointer;
 
-                    @media (max-width: 1024px) {
-                        width: 20px;
-                        height: 20px;
+
+                .category-title {
+                    font-family: Raleway;
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 16px;
+                    color: rgba(240, 90, 0, 1);
+
+                    @media (max-width: 768px) {
+                        font-size: 11px;
                     }
+                }
+
+                .product-title {
+                    font-family: Raleway;
+                    font-size: 16px;
+                    font-weight: 500;
+                    line-height: 20px;
+                    color: black;
+
+                    @media (max-width: 768px) {
+                        font-size: 13px;
+                    }
+                }
+
+                @media (max-width:1366px) {
+                    width: 360px;
+                }
+
+                @media (max-width: 1024px) {
+                    width: 220px;
+                }
+
+                @media (max-width: 768px) {
+                    width: 150px;
+                }
+                @media (max-width:480px) {
+                    width:250px;
+                    display: flex;
+                    justify-content: space-between;
+                }
+            }
+        }
+
+        .item_price_container {
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            width: 53%;
+
+            @media (max-width:1280px) {
+                width: 63%;
+            }
+            @media (max-width:1024px) {
+                width: 58%;
+            }
+            @media (max-width:768px) {
+                width: 65%;
+                flex-grow: 1;
+            }
+            @media (max-width:480px) {
+                width: 100%;
+                position: relative;
+                right: 25px;
+            }
+      
+            .cost {
+
+                width: 100px;
+                display: flex;
+                justify-content: end;
+                align-items: center;
+                padding-right: 30px;
+
+                .cost-title {
+                    font-family: Raleway;
+                    font-size: 16px;
+                    font-weight: 500;
+                    line-height: 20px;
+                    color: black;
+                }
+
+                @media (max-width: 1366px) {
+                    width: 100px;
+                }
+
+                @media (max-width: 1024px) {
+                    width: 130px;
+                    padding-left: 10px;
+                }
+                @media (max-width: 1024px) {
+                    width: 90px;
+                    padding: 0;
                 }
             }
 
-            @media (max-width: 1024px) {
-                width: 107px;
-            }
-        }
-
-        .totalPrice_content {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100px;
-
-            .totalPrice {
+            .count {
+                width: 200px;
+                display: flex;
+                justify-content: end;
+                align-items: center;
+                //text
                 font-family: Raleway;
                 font-size: 16px;
                 font-weight: 500;
                 line-height: 20px;
                 color: black;
+
+                .count-container {
+                    width: 60%;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+
+                    .countProduct_btn {
+                        width: 30px;
+                        height: 30px;
+                        border: none;
+                        background: none;
+                        outline: none;
+                        cursor: pointer;
+
+                        @media (max-width: 1024px) {
+                            width: 20px;
+                            height: 20px;
+                        }
+                    }
+                }
+
+                @media (max-width: 1024px) {
+                    width: 137px;
+                    padding-right: 30px;
+                }
+
             }
-        }
 
-        .deleteProduct {
-            width: 50px;
-            height: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            .totalPrice_content {
+                display: flex;
+                justify-content: end;
+                align-items: center;
+                width: 200px;
+                padding-right: 35px;
 
-            .deleteProduct_btn {
-                background: none;
-                outline: none;
-                border: none;
-                cursor: pointer;
+                @media (max-width:1280px) {
+                    position: relative;
+                    right: 25px;
+                    width: 150px;
+                    padding: 0;
+                }
+                @media (max-width:1024px) {
+                    width: 100px;
+                    right: 0;
+                }
+                @media (max-width:768px) {
+                    right: 25px;
+                }
+
+                .totalPrice {
+                    font-family: Raleway;
+                    font-size: 16px;
+                    font-weight: 500;
+                    line-height: 20px;
+                    color: black;
+                }
+
             }
 
-            @media (max-width: 1024px) {
+            .deleteProduct {
+                width: 50px;
+                height: 50px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                height: 100%;
-                width: 15px;
-
 
                 .deleteProduct_btn {
-                    width: 15px;
-                    height: 15px;
+                    background: none;
+                    outline: none;
+                    border: none;
+                    cursor: pointer;
+                }
+
+
+                @media (max-width: 1024px) {
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                }
+                    height: 100%;
+                    width: 15px;
 
+
+                    .deleteProduct_btn {
+                        width: 15px;
+                        height: 15px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+
+                }
+                @media (max-width:768px) {
+                    position: relative;
+                    right: 10px;
+                }
+                @media (max-width:480px) {
+                    margin-left: 10px;
+                }
             }
         }
+
+
+
+
     }
 }
 
@@ -187,4 +292,9 @@
     .cart_total_price_container {
         width: 50%;
     }
+
+    .deleteProduct {
+        padding-right: 25px;
+    }
+
 }

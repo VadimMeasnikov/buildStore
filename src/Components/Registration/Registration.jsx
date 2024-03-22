@@ -124,17 +124,17 @@ export default function Registration({ registration, authorization }) {
                     <h2 className='titleForm'>Регистрация</h2>
                     <div className="input_UserData">
                         <label className='lbl'>Имя</label>
-                        <input name='name' placeholder='' id='userName' type="text" value={registration.userNameReg} onBlur={event => blurHandler(event)} onChange={event => userNameCheck(event)} />
+                        <input name='name' placeholder='' id='userName' type="text" value={registration.userNameReg} onBlur={event => blurHandler(event)} onChange={event => registration.setUserNameCheck(event)} />
                         {(registration.userNameRegDirty && registration.userNameRegError) && <div className='input_reg_error'>{registration.userNameRegError}</div>}
                     </div>
                     <div className="input_UserData">
                         <label className='lbl'>Фамилия</label>
-                        <input name='surname' id='userSurname' type="text" value={registration.userSurname} onBlur={event => blurHandler(event)} onChange={event => userSurnameCheck(event)} />
+                        <input name='surname' id='userSurname' type="text" value={registration.userSurname} onBlur={event => blurHandler(event)} onChange={event => registration.setUserSurnameCheck(event)} />
                         {(registration.userSurnameRegDirty && registration.userSurnameRegError) && <div className='input_reg_error'>{registration.userSurnameRegError}</div>}
                     </div>
                     <div className="input_UserData">
                         <label className='lbl'>Телефон</label>
-                        <input name='tel' placeholder='+7' id='userTelephone' type="telephone" value={registration.userTel} onBlur={event => blurHandler(event)} onChange={event => userTelCheck(event)} />
+                        <input name='tel' placeholder='+7' id='userTelephone' type="telephone" value={registration.userTel} onBlur={event => blurHandler(event)} onChange={event => registration.setUserTelCheck(event)} />
                         {(registration.userTelRegDirty && registration.userTelRegError) && <div className='input_reg_error'>{registration.userTelRegError}</div>}
                     </div>
                     <div className="input_UserData">

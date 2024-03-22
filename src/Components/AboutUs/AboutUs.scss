@@ -19,12 +19,23 @@
     }
 
     .content {
+        height: 500px;
+
         width: 40%;
+
+        background-image: url(../../img/AboutImg.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
 
         @media (max-width: 1024px) {
             display: flex;
             justify-content: center;
             align-items: center;
+        }
+
+        @media (max-width:480px) {
+            width: 100%;
         }
     }
 
@@ -40,6 +51,11 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+        }
+
+        
+        @media (max-width:480px) {
+            height: 460px;
         }
 
         .titleAbout {
@@ -76,7 +92,7 @@
 
             @media (max-width: 1024px) {
                 text-align: center;
-              }
+            }
         }
 
         .toCatalogButton {

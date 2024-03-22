@@ -1,4 +1,7 @@
 .product{
     background: #dedbdb;
     padding: 100px;
+    @media (max-width: 768px) {
+        padding: 35px;
+    }
 }

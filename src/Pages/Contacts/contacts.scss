@@ -33,6 +33,11 @@
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
+
+            
+            @media (max-width: 768px) {
+                width: 100%;
+            }
         }
 
         .contacts_content2 {
@@ -43,6 +48,13 @@
             width: 40%;
             justify-content: start;
 
+            @media (max-width: 768px) {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+            }
+
             .address_contact {
                 width: 343px;
                 height: 140px;
@@ -51,6 +63,10 @@
                 flex-direction: column;
                 justify-content: space-between;
 
+                @media (max-width: 768px) {
+                    width: 220px;
+                }
+
                 .address_street {
                     //styleName: Subtitle;
                     font-family: Prosto One;
@@ -58,6 +74,10 @@
                     font-weight: 400;
                     line-height: 24px;
                     color: rgba(138, 138, 138, 1);
+
+                    @media (max-width: 768px) {
+                        font-size: 17px;
+                    }
                 }
 
                 .address_city {
@@ -66,6 +86,10 @@
                     font-weight: 400;
                     line-height: 20px;
                     color: rgba(138, 138, 138, 1);
+
+                    @media (max-width: 768px) {
+                        font-size: 13px;
+                    }
                 }
 
                 .address_contact_tel {
@@ -74,6 +98,10 @@
                     font-weight: 400;
                     line-height: 24px;
                     color: rgba(138, 138, 138, 1);
+
+                    @media (max-width: 768px) {
+                        font-size: 13px;
+                    }
                 }
             }
 
@@ -113,5 +141,16 @@
                 }
             }
         }
+    }
+}
+
+@media (max-width: 768px) {
+    .contacts_title{
+        width: 100%;
+        text-align: center;
+    }
+    .contacts_content{
+        flex-direction: column-reverse;
+        align-items: center;
     }
 }
